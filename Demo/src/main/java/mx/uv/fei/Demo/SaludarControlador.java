@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin(origins="*")
 
 
 @RestController
@@ -65,6 +67,8 @@ public class SaludarControlador {
                     <li><a href='/saludador2/default2'>/saludador/{nombreX}</a></li>
                     <li>/crearSaludador (post)</li>
                     <li><a href='/obtenerSaludador'>/obtenerSaludador</a></li>
+                    <li><a href='/getQuery'>/getQuery?nombre=xxx&paterno=yyy</a></li>
+                    <li><a href='/getQuery2'>/getQuery2?nombre=xxx[&paterno=yyy]</a></li>                    
                 </ul>
                 """;
     }

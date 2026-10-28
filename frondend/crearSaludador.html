@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear crearSaludador</title>
+  </head>
+  <body>
+    <h1>Crear saludador</h1>
+    <label for="">nombre:</label>
+    <input type="text" id="v1" />
+    <button onclick="crear()">crear</button>
+    <script>
+      url = "http://localhost:8080/crearSaludador";
+
+      function crear() {
+        e = document.getElementById("v1").value;
+        console.log(e);
+        
+        let cuerpo = JSON.stringify({ contenido: `${e}` });
+        console.log(cuerpo);
+
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: cuerpo,
+        }).then(async (respuesta) => {
+          console.log(await respuesta);
+        });
+      }
+    </script>
+  </body>
+</html>
